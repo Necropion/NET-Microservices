@@ -19,7 +19,7 @@ tailwindcss
 ### Gateway Service Packages
 Ocelot
 
-### Authentication Service Packages
+### Packages of all Services
 
 DotNetEnv  
 Microsoft.EntityFrameworkCore  
