@@ -27,3 +27,9 @@ Microsoft.EntityFrameworkCore.Tools
 Npgsql  
 Npgsql.EntityFrameworkCore.PostgreSQL  
 Swashbuckle.AspNetCore  
+
+### Useful Commands
+
+Migration of Table to PostgreSQL:  
+dotnet ef migrations add InitialCreate  
+dotnet ef database update  

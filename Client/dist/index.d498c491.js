@@ -27214,33 +27214,46 @@ $parcel$ReactRefreshHelpers$5259.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ApplicationContext", ()=>ApplicationContext);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
 var _home = require("./View/Home");
 var _homeDefault = parcelHelpers.interopDefault(_home);
+const ApplicationContext = /*#__PURE__*/ (0, _react.createContext)();
 const Application = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                path: "/",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, {
+    const gateway = "http://localhost:8000";
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ApplicationContext.Provider, {
+        value: {
+            gateway
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Routes), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                    path: "/",
+                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, {
+                        fileName: "Application.jsx",
+                        lineNumber: 17,
+                        columnNumber: 46
+                    }, void 0)
+                }, void 0, false, {
                     fileName: "Application.jsx",
-                    lineNumber: 9,
-                    columnNumber: 42
-                }, void 0)
+                    lineNumber: 17,
+                    columnNumber: 21
+                }, undefined)
             }, void 0, false, {
                 fileName: "Application.jsx",
-                lineNumber: 9,
+                lineNumber: 16,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "Application.jsx",
-            lineNumber: 8,
+            lineNumber: 15,
             columnNumber: 13
         }, undefined)
     }, void 0, false, {
         fileName: "Application.jsx",
-        lineNumber: 7,
+        lineNumber: 12,
         columnNumber: 9
     }, undefined);
 };
@@ -27254,7 +27267,7 @@ $RefreshReg$(_c, "Application");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","./View/Home":"6uolY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./View/Home":"6uolY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xmpe":[function(require,module,exports,__globalThis) {
 /**
  * React Router DOM v6.28.1
  *
@@ -34501,15 +34514,37 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _application = require("../Application");
+var _s = $RefreshSig$();
 const Home = ()=>{
+    _s();
+    const { gateway } = (0, _react.useContext)((0, _application.ApplicationContext));
+    const [item, setItem] = (0, _react.useState)([]);
+    fetchDataAuthentication = async ()=>{
+        console.log("FETCHING DATA...");
+        const fetchData = await fetch(`${gateway}/api/User`);
+        const data = await fetchData.json();
+        if (fetchData.ok) setItem(data);
+    };
+    (0, _react.useEffect)(()=>{
+        fetchDataAuthentication();
+    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "HII"
+        children: item.map((i, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: i.password
+            }, index, false, {
+                fileName: "View/Home.jsx",
+                lineNumber: 27,
+                columnNumber: 17
+            }, undefined))
     }, void 0, false, {
         fileName: "View/Home.jsx",
-        lineNumber: 4,
+        lineNumber: 25,
         columnNumber: 9
     }, undefined);
 };
+_s(Home, "aSk/70PJp6PX39Wn6relJoZFlE4=");
 _c = Home;
 exports.default = Home;
 var _c;
@@ -34520,7 +34555,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Application":"L1igH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 var { version } = require("630b62916b1ae0e7");

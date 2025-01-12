@@ -1,11 +1,11 @@
 {
     "Routes": [
       {
-        "DownstreamPathTemplate": "/api/Credentials",
+        "DownstreamPathTemplate": "/api/User",
         "DownstreamHostAndPorts": [
           { "Host": "localhost", "Port": 8080 }
         ],
-        "UpstreamPathTemplate": "/api/Credentials",
+        "UpstreamPathTemplate": "/api/User",
         "UpstreamHttpMethod": [ "GET", "POST" ]
       }
     ],
