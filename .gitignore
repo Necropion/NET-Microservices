@@ -3,3 +3,39 @@
 .env.*
 **/.env
 **/.env.*
+
+# Ignore Node modules folder
+node_modules/
+**/node_modules/
+
+# Ignore Parcel cache folder
+.parcel-cache/
+**/.parcel-cache/
+
+# Build output
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.csproj.user
+*.vbproj.user
+
+# Rider / JetBrains IDE files
+.idea/
+*.sln.iml
+
+# Ignore environment variable configs and secrets
+.env
+**/.env
+
+# Logs, coverage, and cache
+*.log
+logs/
+coverage/
+.parcel-cache/
+**/.parcel-cache/
+
+# appsettings.Development.json
